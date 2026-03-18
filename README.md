@@ -1,4 +1,4 @@
-# WorkoutTracker Experiment README
+# WorkoutTracker Experiment
 
 ## 1. Overview
 **WorkoutTracker - Experiment** is the experimental version of the WorkoutTracker iOS application. This version includes benchmarking code used to evaluate the app's performance under different dataset sizes.
