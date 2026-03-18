@@ -1,210 +1,174 @@
-# WorkoutTracker
-
-**WorkoutTracker** is an iOS fitness application built with **Xcode (Swift / SwiftUI)** that allows users to log workouts by exercise and repetitions, track progress over 
-time, earn awards, and receive guided exercise suggestions with visual aids. The app is designed as a complete, connected fitness workflow suitable for a senior capstone 
-project.
-
----
-
-## Table of Contents
-
-1. Overview
-2. Key Features
-3. System Architecture
-4. Installation & Setup
-5. How to Use the App
-6. Example Workflows
-7. Awards & Progress Tracking
-8. Suggestions & Visual Aids
-9. Data Flow (Fitness App Integration)
-10. Technologies Used
-11. Future Enhancements
-
----
+# WorkoutTracker Experiment README
 
 ## 1. Overview
+**WorkoutTracker - Experiment** is the experimental version of the WorkoutTracker iOS application. This version includes benchmarking code used to evaluate the app's performance under different dataset sizes.
 
-WorkoutTracker focuses on **simple, structured workout logging** without requiring duration, intensity levels, or custom goal creation. Users log workouts by selecting an 
-exercise and entering repetitions and weight. All components are connected in a single fitness app flow called **WorkoutTracker**, ensuring consistency from input to analytics.
+The purpose of the experiment is to measure how the application performs as the number of stored workout entries increases. The results are displayed in the **Xcode console output** when the app is run in the simulator.
 
-The application is intended for:
-
-* Users who want fast, repeatable workout logging
-* Demonstrating mobile app development best practices in iOS
-* Users looking for feedback and evaluation 
+This experimental version is separate from the main WorkoutTracker application and is intended specifically for performance testing and reproducibility.
 
 ---
 
-## 2. Key Features
+## 2. Purpose of the Experiment
+The experiment was designed to evaluate how well WorkoutTracker scales as more workout data is added.
 
-### User Inputs
+The benchmark measures how the app behaves with increasing amounts of workout entries and helps answer questions such as:
+- How fast does the app load larger datasets?
+- How efficiently does it process workout data?
+- Does performance remain usable as the number of entries increases?
 
-* Enter what exercise was completed
-* Select what muscle group was used during the exercise 
-* Enter number of repetitions and weight
-* Save workout entry
-
-### Workout Log
-
-* Chronological list of completed workouts
-* Displays exercise name, repetitions, and date
-* Deletable entries
-
-### Progress Tracking
-
-* Visual summary of repetitions and weight over time
-* Exercise frequency tracking
-* Weekly and monthly trends
-
-### Awards
-
-* Award unlocking system
-* Award tracking history
-* Visual badges for milestones
-
-### Suggestions
-
-* Exercise ideas
-* Embedded video links for visual guidance
-* Beginner-friendly recommendations
+The experiment validates the app's ability to support long-term use with growing workout history.
 
 ---
 
-## 3. System Architecture
+## 3. Requirements
+To reproduce and run this experiment, you need:
+- A Mac computer
+- Xcode
+- iOS Simulator
+- The **WorkoutTracker - Experiment** project files
 
-The app is organized into modular components:
-
-* **UI Layer (SwiftUI Views)**
-  Handles user interaction and navigation
-
-* **Workout Manager**
-  Stores and retrieves workout entries
-
-* **Progress Engine**
-  Aggregates workout data for analytics
-
-* **Awards Engine**
-  Evaluates milestones and unlocks awards
-
-* **Suggestion Engine**
-  Recommends exercises and videos
-
-All components connect through the **WorkoutTracker** flowchart, ensuring consistent data movement from input to feedback.
+The experiment is run entirely through Xcode.
 
 ---
 
-## 4. Installation & Setup
+## 4. Project Setup
+1. Download or clone the **WorkoutTracker - Experiment** repository.
+2. Open the project in Xcode.
+3. Make sure the correct simulator is selected.
+4. Build and run the app.
 
-1. Clone the repository:
-
-   ```
-   git clone https://github.com/yourusername/WorkoutTracker.git
-   ```
-2. Open the project in Xcode:
-
-   ```
-   open WorkoutTracker.xcodeproj
-   ```
-3. Select an iOS Simulator or connected device
-4. Build and run the application
+Example:
+```bash
+git clone https://github.com/yourusername/WorkoutTrackerExperiment.git
+cd WorkoutTrackerExperiment
+open WorkoutTracker.xcodeproj
+``` 
 
 ---
 
-## 5. How to Use the App
+## 5. How to Run the Experiment
+The experiment is reproduced by launching the app in the iOS Simulator through Xcode.
 
-1. Launch WorkoutTracker
-2. Navigate to **Add Workout**
-3. Enter in the exercise completed and select what muscle group this exercise focused on 
-4. Enter repetitions
-5. Save workout
-6. View updates in **Workout Log**, **Progress**, and **Awards**
+### Steps
+1. Open **WorkoutTracker - Experiment** in Xcode.
+2. Select an iPhone simulator.
+3. Press the **Run** button.
+4. Wait for the app to launch in the simulator.
+5. View the benchmark results in the Xcode console.
 
----
-
-## 6. Example Workflows
-
-### Example 1: Logging a Workout
-
-* User selects *Squats*
-* Enters *30 repetitions*
-* Saves entry
-* Workout appears in log with today’s date
-
-### Example 2: Viewing Progress
-
-* User opens **Progress** tab
-* Sees total repetitions and weight per exercise
-* Reviews weekly improvement trends
-
-### Example 3: Earning an Award
-
-* User logs workouts 20 days in a single month 
-* "Gym Rat" award unlocks
-* Award badge appears in Awards section
+The benchmark output is printed directly to the console when the experiment code runs.
 
 ---
 
-## 7. Awards & Progress Tracking
+## 6. Where to View the Results
+The experimental results do not appear as part of the app's visual interface. Instead, they are shown in the **Xcode debug console / command-line output** area.
 
-### Awards
+To see the results:
+1. Run the app in Xcode.
+2. Open the console area at the bottom of the Xcode window.
+3. Read the benchmark output printed there.
 
-* First Workout Completed
-* 5 different exercises logged 
-* 10-Day Consistency Streak
-
-Each award is tracked with:
-
-* Unlock date
-* Description
-* Visual badge
-
-### Progress
-
-* Aggregate repetition counts
-* Exercise frequency analysis
-* Long-term performance trends
+The console displays the performance results for each dataset size tested.
 
 ---
 
-## 8. Suggestions & Visual Aids
+## 7. Experimental Method
+The benchmark tests the application using synthetic workout datasets of different sizes.
 
-The Suggestions section provides:
+Example dataset sizes include:
+- 100 entries
+- 1,000 entries
+- 10,000 entries
 
-* Specific exercise ideas (e.g., Lunges, Planks)
-* Short descriptions of proper form
-* Linked videos for visual demonstration
+For each dataset size, the experiment generates sample workout data and measures app performance. The results are printed in the console.
 
----
-
-## 9. Data Flow (Fitness App Integration)
-
-1. User logs workout
-2. Data stored locally
-3. Entry displays within history page 
-4. Progress Engine updates analytics
-5. Awards Engine checks history to update award progress 
-
-This unified flow defines the **WorkoutTracker Fitness App Flowchart**.
+The purpose is to compare how performance changes as the amount of stored data grows.
 
 ---
 
-## 10. Technologies Used
+## 8. Metrics Collected
+The experiment evaluates performance using benchmark output shown in the Xcode console.
 
-* Swift
-* SwiftUI
-* Xcode
-* iOS SDK
+The results may include measurements such as:
+- Load time
+- Data generation time
+- Processing time
+- Analytics computation time
+- Overall performance across dataset sizes
 
----
-
-## 11. Future Enhancements
-
-* Apple Watch integration
-* Personalized AI-based suggestions
-* Exportable workout reports
+These measurements are used to assess the scalability and responsiveness of the application.
 
 ---
 
-## Author
+## 9. Reproducing the Results
+To reproduce the experiment consistently:
+1. Use the same version of the **WorkoutTracker - Experiment** project.
+2. Run the project in Xcode using the iOS Simulator.
+3. Keep the simulator/device choice consistent between runs.
+4. Observe the benchmark results printed in the Xcode console.
+5. Repeat the process if multiple trials are needed.
 
-Senior Capstone Project – Evan Nelson
+If the benchmark is configured to average multiple runs, allow the full benchmark process to complete before recording results.
+
+---
+
+## 10. Example Reproduction Workflow
+A viewer can reproduce the experiment using the following workflow:
+1. Open the project in Xcode.
+2. Select an iPhone simulator.
+3. Run the application.
+4. Wait for the benchmark to execute automatically.
+5. Read the dataset benchmark results in the console.
+6. Compare the reported timings across dataset sizes.
+
+This provides a direct way for instructors, reviewers, or other developers to verify the experiment.
+
+---
+
+## 11. Expected Output
+When the experiment runs successfully, the console should display benchmark information for multiple dataset sizes.
+
+The output should show that:
+- Small datasets complete quickly
+- Larger datasets take more processing time
+- Performance trends can be compared across runs
+
+The exact times may vary depending on the machine and simulator, but the general trend should remain consistent.
+
+---
+
+## 12. Notes on Reproducibility
+Some variation in output may occur depending on:
+- Mac hardware
+- Xcode version
+- Simulator model
+- Background system activity
+
+Because of this, reproduced benchmark values may not be exactly identical on every machine. However, the overall pattern of increasing cost with larger datasets should still be observable.
+
+---
+
+## 13. Threats to Validity
+The following factors may affect the experiment:
+- Synthetic workout data may not perfectly match real-world usage
+- Simulator performance may differ from a physical iPhone
+- Background processes may affect timing measurements
+- Different hardware may produce different timing results
+
+These limitations should be considered when interpreting the benchmark results.
+
+---
+
+## 14. Technologies Used
+- Swift
+- SwiftUI
+- Xcode
+- iOS Simulator
+- iOS SDK
+
+---
+
+## 15. Author
+**Evan Nelson** — Senior Capstone Project
+```
